@@ -79,6 +79,14 @@ void AGhostsPlayerController::SetupInputComponent()
 	
 }
 
+void AGhostsPlayerController::UpdateHealthHUD(float CurrentHealth, float MaxHealth)
+{
+    if (HUDWidget)
+    {
+        HUDWidget->UpdateHealth(CurrentHealth, MaxHealth);
+    }
+}
+
 bool AGhostsPlayerController::ShouldUseTouchControls() const
 {
 	// are we on a mobile platform? Should we force touch?
