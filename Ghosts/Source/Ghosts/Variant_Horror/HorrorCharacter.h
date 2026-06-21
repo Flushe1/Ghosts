@@ -70,9 +70,11 @@ protected:
 public:
 
 	/** Delegate called when the sprint meter should be updated */
+	UPROPERTY(BlueprintAssignable, Category="Sprint")
 	FUpdateSprintMeterDelegate OnSprintMeterUpdated;
 
 	/** Delegate called when we start and stop sprinting */
+	UPROPERTY(BlueprintAssignable, Category="Sprint")
 	FSprintStateChangedDelegate OnSprintStateChanged;
 
 protected:

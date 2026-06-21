@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/PlayerController.h"
+#include "GhostsHUDWidget.h"
 #include "GhostsPlayerController.generated.h"
 
 class UInputMappingContext;
@@ -24,6 +25,9 @@ public:
 	/** Constructor */
 	AGhostsPlayerController();
 
+	UFUNCTION(BlueprintPure, Category="HUD")
+UGhostsHUDWidget* GetHUDWidget() const { return HUDWidget; }
+
 protected:
 
 	/** Input Mapping Contexts */
@@ -41,6 +45,12 @@ protected:
 	/** Pointer to the mobile controls widget */
 	UPROPERTY()
 	TObjectPtr<UUserWidget> MobileControlsWidget;
+
+	UPROPERTY(EditAnywhere, Category="HUD")
+	TSubclassOf<UGhostsHUDWidget> HUDWidgetClass;
+
+	UPROPERTY(BlueprintReadWrite, Category = "HUD")
+	UGhostsHUDWidget* HUDWidget;
 
 	/** If true, the player will use UMG touch controls even if not playing on mobile platforms */
 	UPROPERTY(EditAnywhere, Config, Category = "Input|Touch Controls")

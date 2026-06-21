@@ -2,6 +2,8 @@
 
 
 #include "GhostsPlayerController.h"
+#include "GhostsHUDWidget.h"
+#include "GhostsPlayerController.h"
 #include "EnhancedInputSubsystems.h"
 #include "Engine/LocalPlayer.h"
 #include "InputMappingContext.h"
@@ -20,6 +22,14 @@ void AGhostsPlayerController::BeginPlay()
 {
 	Super::BeginPlay();
 
+	if (IsLocalPlayerController() && HUDWidgetClass)
+	{
+		HUDWidget = CreateWidget<UGhostsHUDWidget>(this, HUDWidgetClass);
+		if (HUDWidget)
+		{
+			HUDWidget->AddToViewport();
+		}
+	}
 	
 	// only spawn touch controls on local player controllers
 	if (ShouldUseTouchControls() && IsLocalPlayerController())
