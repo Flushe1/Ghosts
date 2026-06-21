@@ -1,8 +1,8 @@
 {
 	"FileVersion": 3,
 	"EngineAssociation": "5.7",
-	"Category": "",
-	"Description": "",
+	"Category": "Games",
+	"Description": "Ultra-realistic tactical FPS prototype focused on grounded gunplay, squad tactics, and high-stakes engagements.",
 	"Modules": [
 		{
 			"Name": "Ghosts",

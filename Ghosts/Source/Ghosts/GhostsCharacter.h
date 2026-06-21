@@ -10,6 +10,7 @@
 class UInputComponent;
 class USkeletalMeshComponent;
 class UCameraComponent;
+class UGhostsOperatorComponent;
 class UInputAction;
 struct FInputActionValue;
 
@@ -30,6 +31,10 @@ class AGhostsCharacter : public ACharacter
 	/** First person camera */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Components", meta = (AllowPrivateAccess = "true"))
 	UCameraComponent* FirstPersonCameraComponent;
+
+	/** Operator condition used by tactical gameplay systems */
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Components", meta = (AllowPrivateAccess = "true"))
+	UGhostsOperatorComponent* OperatorComponent;
 
 protected:
 
@@ -89,6 +94,9 @@ public:
 
 	/** Returns first person camera component **/
 	UCameraComponent* GetFirstPersonCameraComponent() const { return FirstPersonCameraComponent; }
+
+	/** Returns operator condition component **/
+	UGhostsOperatorComponent* GetOperatorComponent() const { return OperatorComponent; }
 
 };
 

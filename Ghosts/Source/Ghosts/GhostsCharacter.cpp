@@ -9,6 +9,7 @@
 #include "InputActionValue.h"
 #include "GameFramework/CharacterMovementComponent.h"
 #include "Ghosts.h"
+#include "GhostsOperatorComponent.h"
 
 AGhostsCharacter::AGhostsCharacter()
 {
@@ -32,6 +33,8 @@ AGhostsCharacter::AGhostsCharacter()
 	FirstPersonCameraComponent->bEnableFirstPersonScale = true;
 	FirstPersonCameraComponent->FirstPersonFieldOfView = 70.0f;
 	FirstPersonCameraComponent->FirstPersonScale = 0.6f;
+
+	OperatorComponent = CreateDefaultSubobject<UGhostsOperatorComponent>(TEXT("Operator Component"));
 
 	// configure the character comps
 	GetMesh()->SetOwnerNoSee(true);
