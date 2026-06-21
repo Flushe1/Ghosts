@@ -26,7 +26,10 @@ public:
 	AGhostsPlayerController();
 
 	UFUNCTION(BlueprintPure, Category="HUD")
-UGhostsHUDWidget* GetHUDWidget() const { return HUDWidget; }
+	UGhostsHUDWidget* GetHUDWidget() const { return HUDWidget; }
+
+	UFUNCTION(BlueprintCallable, Category = "HUD")
+	void UpdateHealthHUD(float CurrentHealth, float MaxHealth);
 
 protected:
 
