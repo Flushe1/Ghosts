@@ -31,6 +31,9 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "HUD")
 	void UpdateHealthHUD(float CurrentHealth, float MaxHealth);
 
+	UFUNCTION(BlueprintCallable, Category = "HUD")
+	void UpdateAmmoHUD(int32 RoundsInMagazine, int32 ReserveRounds);
+
 protected:
 
 	/** Input Mapping Contexts */

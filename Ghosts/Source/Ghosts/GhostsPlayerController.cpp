@@ -92,3 +92,11 @@ bool AGhostsPlayerController::ShouldUseTouchControls() const
 	// are we on a mobile platform? Should we force touch?
 	return SVirtualJoystick::ShouldDisplayTouchInterface() || bForceTouchControls;
 }
+
+void AGhostsPlayerController::UpdateAmmoHUD(int32 RoundsInMagazine, int32 ReserveRounds)
+{
+	if (HUDWidget)
+	{
+		HUDWidget->UpdateAmmo(RoundsInMagazine, ReserveRounds);
+	}
+}
